@@ -13,7 +13,7 @@ We start by stating the state $$\ket{S_x;+} = \frac{1}{\sqrt{2}} \qty(\ket + + \
     S_z &= \frac{\hbar}{2} \qty[\op{+}{+} - \ketbra{-}]\\
     S_i^2 &= \frac14 \hbar^2\mathbb{I}
 \end{align*}
-We now substitue and evaluate the left hand side of the equation (L.H.S.)
+We now substitute and evaluate the left hand side of the equation (L.H.S.)
 
 \begin{gather*}
     \ev{(\Delta S_x)^2}\ev{(\Delta S_y)^2} \ge \frac{1}{4} | \ev{\comm{S_x}{S_y}} |^2\\
@@ -32,6 +32,39 @@ We now substitue and evaluate the left hand side of the equation (L.H.S.)
 
 Now we evaluate the R.H.S of the equation
 \begin{gather*}
-    \comm{S_x}{S_y} = i\epsilon_{x,y,z} \hbar \ev{S_z} = i\hbar \ev{S_z} = i \hbar \frac{\hbar}{2} \qty[\op{+}{+} - \ketbra{-}]\\
-    i\frac{\hbar^2}{2}  \frac{1}{\sqrt{2}} \qty(\bra + + \bra -) \qty[\op{+}{+} - \ketbra{-}]\frac{1}{\sqrt{2}} \qty(\ket + + \ket -)
+    \ev{\comm{S_x}{S_y}} = i\epsilon_{x,y,z} \hbar \ev{S_z} = i\hbar \ev{S_z} = i \hbar \frac{\hbar}{2} \bra{S_x;+}\qty[\op{+}{+} - \ketbra{-}]\ket{S_x;+ }\\
+    =i\frac{\hbar^2}{2}  \frac{1}{\sqrt{2}} \qty(\bra + + \bra -) \qty[\op{+}{+} - \ketbra{-}]\frac{1}{\sqrt{2}} \qty(\ket + + \ket -)\\
+    = i\frac{\hbar^2}{4} (1 - 1) = 0 \\
+    |\ev{\comm{S_x}{S_y}}|^2 = 0
 \end{gather*}
+
+So now we have 
+\[
+ \ev{(\Delta S_x)^2}\ev{(\Delta S_y)^2} \ge \frac{1}{4} |\ev{\comm{S_x}{S_y}}|^2 \longrightarrow \frac{\hbar^4}{16} \ge 0
+\]
+
+So the relation holds. Now for $A = S_z$ and $B = S_y$. Starting with the L.H.S.
+
+\begin{align*}
+    \ev{(\Delta S_z)^2} &= \ev{S_z^2} - \ev{S_z}^2\\
+    \ev{(\Delta S_y)^2} &= \ev{S_y^2} - \ev{S_y}^2\\
+    \intertext{We already know that $\ev{S_z} = 0$ and we have already stated above $S_i^2 = \frac14 \hbar^2\mathbb{I}$.}
+    \ev{S_z^2} &= \frac{\hbar^2}{4} \\
+    \therefore \ev{(\Delta S_z)^2} &= \frac{\hbar^2}{4}\\
+    \ev{(\Delta S_y)^2} &= \frac{\hbar^2}{4} \qq{As we have seen before.}\\
+\end{align*}
+Now we work on the R.H.S. 
+\begin{gather*}
+    \ev{\comm{S_z}{S_y}} = i\epsilon_{z,y,x} \hbar \ev{S_x} = -i\hbar \ev{S_x}= -i \hbar \ev{S_x}{S_x;+}\\
+    = -i\hbar\frac{\hbar}{2}\frac12 \bra{S_x;+}\qty(\op{+}{-} + \op{-}{+})\ket{S_x;+ }\\
+    = -i\frac{\hbar^2}{2} \frac12  \qty(\bra + + \bra -) \qty[\op{+}{-} + \ketbra{-}{+}] \qty(\ket + + \ket -)\\
+    = -i\frac{\hbar^2}{2} \frac12 (\braket{+} \braket{-} + \braket{-} \braket{+}) = -i \frac{\hbar^2}{2} \frac12 (2) = -i\frac{\hbar^2}{2}\\
+    |\ev{\comm{S_z}{S_y}}|^2 = \qty(\frac{-i\hbar^2}{2})\qty(\frac{i\hbar^2}{2}) = \frac{\hbar^4}{4}
+\end{gather*}
+
+
+So finally
+ \[
+ \ev{(\Delta S_z)^2}\ev{(\Delta S_y)^2} \ge \frac{1}{4} |\ev{\comm{S_z}{S_y}}|^2 \longrightarrow \frac{\hbar^4}{16} \ge \frac14 \frac{\hbar^4}{4} \longrightarrow \frac{\hbar^4}{16} \ge \frac{\hbar^4}{16}
+ \]
+ The relation also holds.

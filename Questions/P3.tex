@@ -1,0 +1,31 @@
+\item \textbf{Problem 1.7}
+\begin{enumerate}
+    \item Consider two kets $\ket \alpha$ and $\ket \beta$. Suppose $\ip{a'}{\alpha}, \ip{a''}{\alpha}, \dots$and $\ip{a'}{\beta}, \ip{a''}{\beta}, \dots$ are all known, where $\ket{a'}, \ket{a''}, \dots$ form a complete set of base kets. Find the matrix representation of the operator $\op{\alpha}{\beta}$.
+
+    \begin{gather*}
+        \ket \alpha = \sum_{a'} \ket{a'}\ip{a'}{\alpha}\\
+        \ket \beta = \sum_{a''} \ket{a''}\ip{a''}{\beta}
+    \end{gather*}
+    
+    Now we evaluate $\op{\alpha}{\beta}$ and set $\op{\alpha}{\beta} = Z$
+    \begin{gather*}
+        \sum_{a'' a'} \ket{a'}\ip{a'}{\alpha} \ip{\beta}{a''}\bra{a'' }  = \sum_{a'a''} \op{a'}Z \op{a''}\\
+        \mqty(\mel{a^1}{Z}{a^1} & \mel{a^1}{Z}{a^2} & \cdots & \mel{a^1}{Z}{a^m} \\ 
+        \mel{a^2}{Z}{a^1} & \mel{a^2}{Z}{a^2} & \cdots & \mel{a^2}{Z}{a^m} \\
+        \vdots & \vdots & \ddots & \vdots\\
+        \mel{a^m}{Z}{a^1} & \cdots & \cdots & \mel{a^m}{Z}{a^m}
+        )
+    \end{gather*}
+    
+
+    
+    \item We know consider a spin $\frac12$ system and let $\ket \alpha$ and $\ket \beta$ be $\ket{S_z;+}$ and $\ket{S_x;+}$, respectively. Write down explicitly the square matrix that corresponds to $\op{\alpha}{\beta}$ in the usual ($s_z$ diagonal) basis.
+
+    \begin{gather*}
+    \ket \alpha = \ket{S_z;+} = \ket + = \mqty(1 \\0 )\\
+    \ket{\beta} = \ket{S_x;+} = \frac{1}{\sqrt2}(\ket + + \ket -) = \frac{1}{\sqrt{2} } \mqty(1 \\ 1) \\
+    \op{\alpha}{\beta} = \frac{1}{\sqrt{2}}\mqty(1\\0)\mqty(1&1) = \frac{1}{\sqrt2}\mqty(1&1\\0&0)
+    \end{gather*}
+
+    
+\end{enumerate}
