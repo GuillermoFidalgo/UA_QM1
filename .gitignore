@@ -5,3 +5,7 @@
 *.out
 *.xdv
 *.gz
+*.nav
+*.snm
+*.toc
+*.bak0

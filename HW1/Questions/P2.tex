@@ -1,44 +1,44 @@
-\item \textbf{Problem 1.6}  Using the rules of bra-ket algebra, prove or evaluate the following: 
+\item \textbf{Problem 1.6}  Using the rules of bra-ket algebra, prove or evaluate the following:
 \begin{enumerate}
-    \item $\Tr(XY) = \Tr(YX)$, where $X$ and $Y$ are operators.
-    
-    \textbf{Solution:}
-    \begin{gather*}
-    \Tr(XY) = \sum_{a'} \ev{XY}{a'} = \sum_{b'}\sum_{a'} \mel{a'}{X}{b'} \mel{b'}{Y}{a'} \\
-    = \sum_{b'a'} \mel{b'}{Y}{a'} \mel{a'}{X}{b'} = \sum_{b'} \mel{b'}{YX}{b'} = \Tr(YX)
-    \end{gather*}
-        
-    \item $(XY)^\dag = Y^\dagger X^\dag$, where $X$ and $Y$ are operators.
-    
-    \textbf{Solution:}
+	\item $\Tr(XY) = \Tr(YX)$, where $X$ and $Y$ are operators.
 
-    Using two arbitrary kets $\ket \alpha, \ket \beta$
-    \begin{gather*}
-        \mel{\alpha}{(XY)^\dag}{\beta} = \mel{\beta}{XY}{\alpha}^* = \sum_{a'} \qty(\mel{\beta}{X}{a'}\mel{a'}{Y}{\alpha})^* = \sum_{a'} \mel{a'}{Y}{\alpha}^* \mel{\beta}{X}{a'}^* \\
-        = \sum_{a'}\mel{\alpha}{Y^\dag}{a'}\mel{a'}{X^\dag}{\beta} = \mel{\alpha}{Y^\dag X^\dag}{\beta}
-    \end{gather*}
-    So we have 
+	      \textbf{Solution:}
+	      \begin{gather*}
+		      \Tr(XY) = \sum_{a'} \ev{XY}{a'} = \sum_{b'}\sum_{a'} \mel{a'}{X}{b'} \mel{b'}{Y}{a'} \\
+		      = \sum_{b'a'} \mel{b'}{Y}{a'} \mel{a'}{X}{b'} = \sum_{b'} \mel{b'}{YX}{b'} = \Tr(YX)
+	      \end{gather*}
 
-    \[
-    \mel{\alpha}{(XY)^\dag}{\beta}=\mel{\alpha}{Y^\dag X^\dag}{\beta}
-    \]
-    for arbitrary $\ket \alpha, \ket \beta$, therefore we must have 
-    \[
-    (XY)^\dag = Y^\dagger X^\dag
-    \]
-    
-    
-    
-    \item $\exp[if(A)] =?$ in ket-bra form, where A is a Hermitian operator whose eigenvalues are known.
-    
-    \textbf{Solution:}
-    
-    \begin{gather*}
-        \exp[if(A)] = \exp[if\qty(\sum_{a'a''} \op{a'} A \op{a''})] \\
-        = \exp(if \mqty[\dmat[0]{a',a'' , \ddots}]) = \mqty[\dmat[0]{\exp(if(a')),\exp(if(a'')), \ddots}]\\
-        = \sum_{a'}\exp[if(a')]\op{a'}
-    \end{gather*}
-    
-    
-    
+	\item $(XY)^\dag = Y^\dagger X^\dag$, where $X$ and $Y$ are operators.
+
+	      \textbf{Solution:}
+
+	      Using two arbitrary kets $\ket \alpha, \ket \beta$
+	      \begin{gather*}
+		      \mel{\alpha}{(XY)^\dag}{\beta} = \mel{\beta}{XY}{\alpha}^* = \sum_{a'} \qty(\mel{\beta}{X}{a'}\mel{a'}{Y}{\alpha})^* = \sum_{a'} \mel{a'}{Y}{\alpha}^* \mel{\beta}{X}{a'}^* \\
+		      = \sum_{a'}\mel{\alpha}{Y^\dag}{a'}\mel{a'}{X^\dag}{\beta} = \mel{\alpha}{Y^\dag X^\dag}{\beta}
+	      \end{gather*}
+	      So we have
+
+	      \[
+		      \mel{\alpha}{(XY)^\dag}{\beta}=\mel{\alpha}{Y^\dag X^\dag}{\beta}
+	      \]
+	      for arbitrary $\ket \alpha, \ket \beta$, therefore we must have
+	      \[
+		      (XY)^\dag = Y^\dagger X^\dag
+	      \]
+
+
+
+	\item $\exp[if(A)] =?$ in ket-bra form, where A is a Hermitian operator whose eigenvalues are known.
+
+	      \textbf{Solution:}
+
+	      \begin{gather*}
+		      \exp[if(A)] = \exp[if\qty(\sum_{a'a''} \op{a'} A \op{a''})] \\
+		      = \exp(if \mqty[\dmat[0]{a',a'' , \ddots}]) = \mqty[\dmat[0]{\exp(if(a')),\exp(if(a'')), \ddots}]\\
+		      = \sum_{a'}\exp[if(a')]\op{a'}
+	      \end{gather*}
+
+
+
 \end{enumerate}
