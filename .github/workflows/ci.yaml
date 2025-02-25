@@ -46,7 +46,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: my-slides
-          path: Notes/main.pdf
+          path: main.pdf
 
       - name: GH Release
         uses: softprops/action-gh-release@v2.0.4
