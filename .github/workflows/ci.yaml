@@ -46,7 +46,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: my-slides
-          path: main.pdf
+          path: Notes/main.pdf
 
       - name: GH Release
         uses: softprops/action-gh-release@v2.0.4
@@ -54,6 +54,6 @@ jobs:
         with:
           make_latest: true
           generate_release_notes: true
-          files: main.pdf
+          files: Notes/main.pdf
     permissions:
       contents: write
