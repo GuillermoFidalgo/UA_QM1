@@ -16,25 +16,40 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pygments
+
       - uses: xu-cheng/latex-action@v3
         with:
-          root_file: Notes/main.tex
+          latexmk_shell_escape: true
           work_in_root_file_dir: true
+          root_file: Notes/main.tex
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
-          pre_compile: "tlmgr update --self && tlmgr install minted hyperref wrapfig enumitem titlesec physics biblatex biblatex-phys tocbibind siunitx cleveref transparent graphbox"
+          pre_compile: |
+            tlmgr update --self
+            tlmgr install wrapfig enumitem titlesec svg physics biblatex biblatex-phys
+            tlmgr install tocbibind siunitx cleveref transparent graphbox
+            tlmgr install minted appendixnumberbeamer hyperref
+
       - uses: actions/upload-artifact@v4
         with:
-          name: Notes
+          name: my-slides
           path: Notes/main.pdf
 
       - name: GH Release
-        uses: softprops/action-gh-release@v2.2.1
+        uses: softprops/action-gh-release@v2.0.4
         if: startsWith(github.ref, 'refs/tags/')
         with:
           make_latest: true
