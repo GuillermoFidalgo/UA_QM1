@@ -1,5 +1,23 @@
 \section{Jan 17, 2025}
 \subsection{Base Kets and Matrix Representations}
 \begin{frame}{Eigenkets of an observation}
-	\alert{highlighted text}Theorem 1. The eigenvalues of a Hermitian operator $A$ are real; the eigenkets of $A$ corresponding to different eigenvalues are orthogonal.
+	\begin{alertblock}{Theorem 1}
+		The eigenvalues of a Hermitian operator $A$ are real; the eigenkets of $A$ corresponding to different eigenvalues are orthogonal.
+	\end{alertblock}
+	Proof:
+
+	\begin{gather}
+		A\ket{a'} = a'\ket{a'} \label{eq:1}\\
+		\bra{a'' }A = a''^* \bra{a''} \label{eq:2}\\
+		\bra{a''} \cdot \ref{eq:1} - \ref{eq:2}\cdot \ket{a'} \to (a'-a'') \ip{a''}{a'} = 0
+	\end{gather}
+	If $a'=a''$, then $a'=a''^*=a'^*$ since $\ip{a'}{a'} = 0$
+
+	$\therefore a'$ is real. If $a'\ne a'', a'-a'' \ne 0 \Longrightarrow \ip{a''}{a'} = 0$
+
+	i.e. $\ket{a''} \& \ket{a'}$ are orthogonal.
+
+\end{frame}
+\begin{frame}
+	Can normalize $\ket{a'}$ so that $\{\ket{a'}\}$ forms an orthogonal set with $\ip{a''}{a'}= \delta_{a' a''	}$
 \end{frame}
