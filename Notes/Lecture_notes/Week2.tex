@@ -19,5 +19,23 @@
 
 \end{frame}
 \begin{frame}
-	Can normalize $\ket{a'}$ so that $\{\ket{a'}\}$ forms an orthogonal set with $\ip{a''}{a'}= \delta_{a' a''	}$
+	Can normalize $\ket{a'}$ so that $\{\ket{a'}\}$ forms an orthogonal set with $\ip{a''}{a'}= \delta_{a' a''}$.
+
+	The set of eigenkets forms a complete set to span the ket space.
+\end{frame}
+
+\subsection{Eigenkets and Base Kets}
+\begin{frame}
+	\frametitle{Eigenkets and Base Kets}
+
+	\begin{equation}\label{eq:alpha base}
+		\ket{\alpha} = \sum_{a'} C_{a'} \ket{a'}
+	\end{equation}
+	--- expansion of an arbitrary ket in the ket space spanned by the eigenkets of $A$.
+	\begin{gather*}
+		\bra{a''} (\ref{eq:alpha base}): \quad \ip{a''}{\alpha} = \sum_{a'} C_{a'} \underbrace{\ip{a''}{a'}}_{\delta_{a'' a'}} = C_{a''}\\
+		\Rightarrow C_{a'} = \ip{a'}{\alpha}\\
+		\therefore \quad \ket{\alpha} = \sum_{a'} \op{a'}\ket{\alpha}\\
+		\text{C.f.} \quad \vec{V} = \sum_i \hat e_i (\hat e_i \cdot \vec V) \qq{for a vector} \vec V
+	\end{gather*}
 \end{frame}
