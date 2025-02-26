@@ -39,3 +39,70 @@
 		\text{C.f.} \quad \vec{V} = \sum_i \hat e_i (\hat e_i \cdot \vec V) \qq{for a vector} \vec V
 	\end{gather*}
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{Completeness relation or closure relation}
+	$$
+		\mathbb{1} = \sum_{a'} \op{a'}
+	$$
+	eg.
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{gather*}
+			\ip{\alpha} = \bra{\alpha} \cdot \qty(\sum_{a'}\op{a'}) \cdot \ket{\alpha}	\\
+			= \sum_{a'} \ip{\alpha}{a'}\ip{a'}{\alpha}\\
+			= \sum_{a'} \ip{a'}{\alpha}^*\ip{a'}{\alpha}\\
+			= \sum_{a'} \qty|\ip{a'}{\alpha}|^2
+		\end{gather*}
+		\column{.5\textwidth}
+		also if $\ket{\alpha}$ is normalized then $\ip{\alpha}  = 1$
+		\begin{align*}
+			\Rightarrow & \sum_{a'} \qty|\ip{a'}{\alpha}|^2 \\
+			            & = \sum_{a'} |C_{a'}|^2            \\
+			            & = 1
+		\end{align*}
+	\end{columns}
+\end{frame}
+\begin{frame}
+	\frametitle{Projection operator}
+
+	Note: $\op{a'}$ is a projection operator because
+	\[
+		\qty(\op{a'})\cdot \ket{\alpha} = \ket{a'} \ip{a'}{\alpha} = C_{a'} \ket{a'}
+	\]
+	c.f. Dyadic ooperator in 3D Euclidean space
+	\[\hat e_i \hat e_j \qquad (\hat x \hat x) \cdot \bar V = \hat x (\hat x \cdot \bar V)\]
+\end{frame}
+\section{Matrix Representations}
+\begin{frame}
+	\frametitle{Matrix representation}
+	A ket can be represented as a column vector.\\
+	An operator can be represented as a matrix.
+	\[
+		\ket \alpha = \sum_{a'} \ket{a'} \ip{a'}{\alpha}
+	\]
+	where $a'$ is a base ket.
+
+	If we use a column vector to represent $\ket{a'}$ it will be the following. Denote
+	\begin{gather*}
+		\qty{a'} = \qty{a^{(1)},a^{(2)},\dots}\\
+		\ket{a^{(1)}} = \mqty[1 \\ 0 \\ 0 \\ \vdots] \quad \ket{a^{(2)}} = \mqty[0 \\ 1 \\ 0 \\ \vdots]
+	\end{gather*}
+
+\end{frame}
+\begin{frame}
+	\frametitle{Matrix Representations}
+
+	So
+	\[
+		\ket{\alpha} = \ket{a^{(1)}} = \mqty[\ip{a^{(1)}}{\alpha} \\ \ip{a^{(2)}}{\alpha} \\ \vdots] = \mqty[C_{a^{(1)}}\\C_{a^{(2)}}\\ \vdots]
+	\]
+	Operator $X$ in matrix form
+	\[
+		X = \mathbb{1} \cdot X \cdot \mathbb{1} = \sum_{a'} \op{a''} X\sum_{a'} \op{a'}  = \sum_{a'' a'} \op{a''} X \op{a'}
+	\]
+	\[
+		X = \mqty[\ev{A}{a^{(1)}} \\ 1]
+	\]
+\end{frame}
