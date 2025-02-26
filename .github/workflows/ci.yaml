@@ -41,7 +41,7 @@ jobs:
             tlmgr update --self
             tlmgr install wrapfig enumitem titlesec svg physics biblatex biblatex-phys
             tlmgr install tocbibind siunitx cleveref transparent graphbox
-            tlmgr install minted appendixnumberbeamer hyperref
+            tlmgr install minted appendixnumberbeamer hyperref bbold
 
       - uses: actions/upload-artifact@v4
         with:
