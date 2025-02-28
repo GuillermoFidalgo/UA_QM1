@@ -1,5 +1,4 @@
-\section{Jan 17, 2025}
-\subsection{Base Kets and Matrix Representations}
+\section{Base Kets and Matrix Representations}
 \begin{frame}{Eigenkets of an observation}
 	\begin{alertblock}{Theorem 1}
 		The eigenvalues of a Hermitian operator $A$ are real; the eigenkets of $A$ corresponding to different eigenvalues are orthogonal.
@@ -74,9 +73,9 @@
 	c.f. Dyadic ooperator in 3D Euclidean space
 	\[\hat e_i \hat e_j \qquad (\hat x \hat x) \cdot \bar V = \hat x (\hat x \cdot \bar V)\]
 \end{frame}
-\section{Matrix Representations}
+\subsection{Matrix Representations}
 \begin{frame}
-	\frametitle{Matrix representation}
+	\frametitle{Matrix Representations}
 	A ket can be represented as a column vector.\\
 	An operator can be represented as a matrix.
 	\[
@@ -103,6 +102,54 @@
 		X = \mathbb{1} \cdot X \cdot \mathbb{1} = \sum_{a'} \op{a''} X\sum_{a'} \op{a'}  = \sum_{a'' a'} \op{a''} X \op{a'}
 	\]
 	\[
-		X = \mqty[\ev{A}{a^{(1)}} \\ 1]
+		X = \mqty[
+			\ev{X}{a^{(1)}} & \mel{a^{(1)}}{X}{a^{(2)}} & \cdots \\
+			\mel{a^{(2)}}{X}{a^{(1)}} & \ev{X}{a^{(2)}} & \cdots \\
+			\vdots & \vdots & \ddots
+		]
 	\]
+	is a square matrix
+	Note:
+
+	\[
+		\mel{a'' }{X}{a'} = \mel{a'}{X^\dag}{a''}^* \Rightarrow \mel{a'}{X^\dag}{a''} = \mel{a''}{X}{a'}^*
+	\]
+	Hermitian adjoint corresponds to taking the transpose and complex conjugate of the matrix form of the operator.
 \end{frame}
+
+\begin{frame}
+	\frametitle{Matrix Representations}
+
+	\begin{gather*}
+		Z = XY\\
+		\mel{a''}{Z}{a'} = \mel{a''}{XY}{a'} \\
+		= \sum_{a'''} \mel{a''}{X}{a'''} \mel{a'''}{Y}{a'}\\
+		\ket{\gamma} = X \ket{\alpha}\\
+		\ip{a'}{\gamma} = \mel{a'}{X}{\alpha} \Rightarrow \sum_{a''} \mel{a'}{X}{a''}\ip{a''}{\alpha} \\
+		\mqty[\ip{a^{(1)}}{\gamma} \\ \ip{a^{(2)}}{\gamma} \\ \vdots] = \mqty[
+			\ev{X}{a^{(1)}} & \mel{a^{(1)}}{X}{a^{(2)}} & \cdots \\
+			\mel{a^{(2)}}{X}{a^{(1)}} & \ev{X}{a^{(2)}} & \cdots \\
+			\vdots & \vdots & \ddots
+		] \mqty[\ip{a^{(1)}}{\alpha} \\ \ip{a^{(2)}}{\alpha} \\ \vdots]
+	\end{gather*}
+	same for bras
+\end{frame}
+
+\begin{frame}{Matrix Representations}
+	\begin{gather*}
+		\bra{\gamma} = \bra{\alpha} X \\
+		\ip{\gamma}{a'} = \mel{\alpha}{X}{a'} = \sum_{a''} \ip{\alpha}{a''}\mel{a'' }{X}{a'}\\
+		= \mqty[\ip{\gamma}{a^{(1)}} & \ip{\gamma}{a^{(2)}} & \cdots]  \\
+		= \mqty[\ip{\alpha}{a^{(1)}} & \ip{\alpha}{a^{(2)}} & \cdots]
+		\mqty[
+			\ev{X}{a^{(1)}} & \mel{a^{(1)}}{X}{a^{(2)}} & \cdots \\
+			\mel{a^{(2)}}{X}{a^{(1)}} & \ev{X}{a^{(2)}} & \cdots \\
+			\vdots & \vdots & \ddots
+		]
+	\end{gather*}
+
+\end{frame}
+
+% \begin{frame}{Matrix Representations}
+
+% \end{frame}
