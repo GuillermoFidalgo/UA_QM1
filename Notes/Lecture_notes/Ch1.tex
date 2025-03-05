@@ -185,37 +185,37 @@
 	Base kets : $ \ket{S_z;\pm} = \ket{\pm}$\\
 	Completeness: $\mathbb{1} = \op{+} + \op{-}$
 	\begin{gather*}
-			\text{Eigenvalue eqn}: S_z \ket{\pm} = \pm \frac\hbar2 \ket{\pm}\\
-			S_z = \frac\hbar2 \op{+} - \frac{\hbar}{2}\op{-} = \frac{\hbar}{2} \qty(\op{+} - \op{-})
+		\text{Eigenvalue eqn}: S_z \ket{\pm} = \pm \frac\hbar2 \ket{\pm}\\
+		S_z = \frac\hbar2 \op{+} - \frac{\hbar}{2}\op{-} = \frac{\hbar}{2} \qty(\op{+} - \op{-})
 	\end{gather*}
 \end{frame}
 
 \subsection{Example: Spin 1/2 systems}
 \begin{frame}{Example: Spin 1/2 systems}
-	
-	Now define 
 
-\[
-\begin{split}
-	S_+ = \hbar \op{+}{-} \\
-	S_- = \hbar \op{-}{+} 
-\end{split}\Biggr\} \text{Ladder Operators}
-\]
+	Now define
 
-Note: 
-\[
-\begin{split}
-	S_+ \ket{-} = \hbar \ket + \overbrace{\ip{-}}^1 = \hbar\ket +\\
-	S_+ \ket{+} = \hbar \ket + \underbrace{\ip{-}{+}}_0 =  0 \\
-\end{split} \Biggr\} \text{Raising Operator}
-\] 
-%
-\[
-\begin{split}
-	S_- \ket{+} = \hbar \ket - \overbrace{\ip{+}}^1 = \hbar\ket -\\
-	S_- \ket{-} = \hbar \ket - \underbrace{\ip{+}{-}}_0 =  0 \\
-\end{split} \Biggr\} \text{Lowering Operator}
-\] 
+	\[
+		\begin{split}
+			S_+ = \hbar \op{+}{-} \\
+			S_- = \hbar \op{-}{+}
+		\end{split}\Biggr\} \text{Ladder Operators}
+	\]
+
+	Note:
+	\[
+		\begin{split}
+			S_+ \ket{-} = \hbar \ket + \overbrace{\ip{-}}^1 = \hbar\ket + \\
+			S_+ \ket{+} = \hbar \ket + \underbrace{\ip{-}{+}}_0 =  0      \\
+		\end{split} \Biggr\} \text{Raising Operator}
+	\]
+	%
+	\[
+		\begin{split}
+			S_- \ket{+} = \hbar \ket - \overbrace{\ip{+}}^1 = \hbar\ket - \\
+			S_- \ket{-} = \hbar \ket - \underbrace{\ip{+}{-}}_0 =  0      \\
+		\end{split} \Biggr\} \text{Lowering Operator}
+	\]
 
 \end{frame}
 
@@ -234,30 +234,30 @@ Note:
 \begin{frame}{Measurements, Observables and the Uncertainty Relations}{Measurements}
 	\begin{itemize}
 		\item Observable A \\
-		Before measurement, the system is in a state $\ket \alpha$
-		\[
-			\ket{\alpha} = \sum_{a'} \ket{a'} \ip{a'}{\alpha}
-		\]
-		where $\{\ket{a'}\}$ is the set of eigenkets for $A$. Under measuerment the system is thrown into an eigenstate
-		\[ \ket{\alpha} \xrightarrow{\text{ \tiny A measurement}} \ket{a'}\] 
-		If the state before measurement is an eigenstate of the observables, say $\ket{a'}$
-		\[ \ket{a'} \xrightarrow{\text{\tiny A measurement}} \ket{a'}\] 
+		      Before measurement, the system is in a state $\ket \alpha$
+		      \[
+			      \ket{\alpha} = \sum_{a'} \ket{a'} \ip{a'}{\alpha}
+		      \]
+		      where $\{\ket{a'}\}$ is the set of eigenkets for $A$. Under measuerment the system is thrown into an eigenstate
+		      \[ \ket{\alpha} \xrightarrow{\text{ \tiny A measurement}} \ket{a'}\]
+		      If the state before measurement is an eigenstate of the observables, say $\ket{a'}$
+		      \[ \ket{a'} \xrightarrow{\text{\tiny A measurement}} \ket{a'}\]
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\begin{itemize}
 		\item Probability for jumping into some particular state $\ket{a'}$ is $|\ip{a'}{\alpha}|^2$ where $\ket{\alpha}$ is normalized.
-		In the particular case when $\ket{\alpha} = \ket{a'}$ before measurement, then probability of measuring $A$ to be $a'$ will be 1 since 
-		\[\qty|\ip{a'}|^2 = 1\]
-		Probability of measuring $A$ to be $a''$ (where $a'' \neq a'$) will be 0 since $\qty|\ip{a''}{a'}|^2 = 0$ due to orthogonality.
+		      In the particular case when $\ket{\alpha} = \ket{a'}$ before measurement, then probability of measuring $A$ to be $a'$ will be 1 since
+		      \[\qty|\ip{a'}|^2 = 1\]
+		      Probability of measuring $A$ to be $a''$ (where $a'' \neq a'$) will be 0 since $\qty|\ip{a''}{a'}|^2 = 0$ due to orthogonality.
 		\item Expectation value of $A$ when the system is in state $\ket \alpha$. \[\ev{A} =\ev{A}{\alpha} \]
-		means the average measured value 
-		\begin{gather*}
-			\ev{A} = \sum_{a''}\sum_{a'} \ip{\alpha}{a''}\mel{a''}{A}{a'}\ip{a'}{\alpha}\\
-			= \sum_{a''}\sum_{a'} a'\ip{\alpha}{a''} \underbrace{\ip{a''}{a'}}_{\delta_{a''a'}} \ip{a'}{\alpha}\\
-			= \sum_{a'} a' \ip{\alpha}{a'}\ip{a'}{\alpha} = \sum_{a'} a' \ip{a'}{\alpha} \ip{a'}{\alpha}^* = \sum_{a'} a'|\ip{a'}{\alpha}|^2
-		\end{gather*}
+		      means the average measured value
+		      \begin{gather*}
+			      \ev{A} = \sum_{a''}\sum_{a'} \ip{\alpha}{a''}\mel{a''}{A}{a'}\ip{a'}{\alpha}\\
+			      = \sum_{a''}\sum_{a'} a'\ip{\alpha}{a''} \underbrace{\ip{a''}{a'}}_{\delta_{a''a'}} \ip{a'}{\alpha}\\
+			      = \sum_{a'} a' \ip{\alpha}{a'}\ip{a'}{\alpha} = \sum_{a'} a' \ip{a'}{\alpha} \ip{a'}{\alpha}^* = \sum_{a'} a'|\ip{a'}{\alpha}|^2
+		      \end{gather*}
 	\end{itemize}
 \end{frame}
 
@@ -265,28 +265,28 @@ Note:
 \begin{frame}{Compatible Observables}
 	\begin{itemize}
 		\item Compatible observables if $\comm{A}{B} = 0$, otherwise they are called incompatible. e.g.
-		\begin{gather*}
-			\comm{S^2}{S_z} = 0 \Rightarrow S^2,S_z \; \text{are compatible}\\
-			\comm{S_x}{S_z} \neq 0 \Rightarrow S_x,S_z \; \text{are incompatible}
-		\end{gather*}
+		      \begin{gather*}
+			      \comm{S^2}{S_z} = 0 \Rightarrow S^2,S_z \; \text{are compatible}\\
+			      \comm{S_x}{S_z} \neq 0 \Rightarrow S_x,S_z \; \text{are incompatible}
+		      \end{gather*}
 		\item Suppose there are two (or more) linearly independent eigenkets of $A$ having the same eigenvalue, then the eigenvalues of the two eigenkets are said to be degenerate. e.g. $\left\{ a^{(1)}, a^{(2)},\dots,a^{(k)}\right\}$ correspond to $\left\{\ket{a^{(1)}},\ket{a^{(2)}},\dots,\ket{a^{(k)}}	\right\}$
-		If $a^{(1)} = a^{(2)} = a, \ket{a^{(1)}} \& \ket{a^{(2)}}$ are degenerate states $\Rightarrow \{a,a,a^{(3)} ,\dots\}$. How to distinguish them?
+		      If $a^{(1)} = a^{(2)} = a, \ket{a^{(1)}} \& \ket{a^{(2)}}$ are degenerate states $\Rightarrow \{a,a,a^{(3)} ,\dots\}$. How to distinguish them?
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Compatible Observables}{Theorem 2:}
 	Suppose $A \ \&\  B$ are compatible observables, and the eigenvalues of $A$ are non-degenerate. Then, the matrix elements $\mel{a''}{B}{a'}$ are all diagonal.
 
-	Proof: 
+	Proof:
 	\begin{align*}
-		\mel{a''}{\comm{A}{B}}{a'} &= \mel{a''}{(AB - BA)}{a'} \\
-		&= \mel{a''}{(a''B -B a')}{a'}\\
-		&= (a'' - a') \mel{a''}{B}{a'} \\
-		&= 0
+		\mel{a''}{\comm{A}{B}}{a'} & = \mel{a''}{(AB - BA)}{a'}    \\
+		                           & = \mel{a''}{(a''B -B a')}{a'} \\
+		                           & = (a'' - a') \mel{a''}{B}{a'} \\
+		                           & = 0
 	\end{align*}
 	$\mel{a''}{B}{a'} = 0 $ unless $a'' = a'$
 	\[
-	\mqty[\ddots\admat{0,\ddots,0}\ddots]
+		\mqty[\ddots\admat{0,\ddots,0}\ddots]
 	\]
 \end{frame}
 
@@ -301,8 +301,8 @@ Note:
 	\end{gather*}
 	$\ket{a'}$ is a simultaneous eigenket of $A$ and $B$ labeled as $\ket{a',b'}$
 	\begin{align*}
-		A\ket{a',b'}&=a'\ket{a',b'}\\
-		B\ket{a',b'}&=b'\ket{a',b'}
+		A\ket{a',b'} & =a'\ket{a',b'} \\
+		B\ket{a',b'} & =b'\ket{a',b'}
 	\end{align*}
 \end{frame}
 
@@ -318,8 +318,8 @@ Note:
 \begin{frame}{What happens if we measure two compatible observables $A$ and $B$?}
 	\begin{itemize}
 		\item If eigenvalues of $A$ are non-degenerate:
-		\[
-		\ket{\alpha} \xrightarrow[A \text{ get } a']{\text{measurement}} \ket{a',b'} \xrightarrow[B \text{ get } b']{\text{measurement}} 
-		\]
+		      \[
+			      \ket{\alpha} \xrightarrow[A \text{ get } a']{\text{measurement}} \ket{a',b'} \xrightarrow[B \text{ get } b']{\text{measurement}}
+		      \]
 	\end{itemize}
 \end{frame}
