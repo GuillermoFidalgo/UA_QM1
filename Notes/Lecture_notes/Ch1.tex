@@ -274,8 +274,10 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Compatible Observables}{Theorem 2:}
-	Suppose $A \ \&\  B$ are compatible observables, and the eigenvalues of $A$ are non-degenerate. Then, the matrix elements $\mel{a''}{B}{a'}$ are all diagonal.
+\begin{frame}{Compatible Observables}
+	\begin{alertblock}{Theorem 2}
+		Suppose $A \ \&\  B$ are compatible observables, and the eigenvalues of $A$ are non-degenerate. Then, the matrix elements $\mel{a''}{B}{a'}$ are all diagonal.
+	\end{alertblock}
 
 	Proof:
 	\begin{align*}
@@ -319,7 +321,15 @@
 	\begin{itemize}
 		\item If eigenvalues of $A$ are non-degenerate:
 		      \[
-			      \ket{\alpha} \xrightarrow[A \text{ get } a']{\text{measurement}} \ket{a',b'} \xrightarrow[B \text{ get } b']{\text{measurement}}
+			      \ket{\alpha} \xrightarrow[A \text{ get } a']{\text{measurement}} \ket{a',b'} \xrightarrow[B \text{ get } b']{\text{measurement}} \ket{a',b'}\xrightarrow[A \text{ get } a']{\text{measurement}}\ket{a',b'}
+		      \]
+		\item If eigenvalues of $A$ are n-fold degenerate:
+		      \[\tiny \hspace{-4mm}
+			      \ket{\alpha} \xrightarrow[A \text{ get } a']{\text{measurement}} \sum_{i=1}^n C_{a}^{i}\ket{a',b^{(i)}} \xrightarrow[B \text{ get } b^{(j)}]{\text{measurement}} \ket{a',b^{(j)}}\xrightarrow[A \text{ get } a']{\text{measurement}}\ket{a',b^{(j)}}
 		      \]
 	\end{itemize}
+
+	$A$ measurements and $B$ measurements do not interfere for compatible observables.
+
+	Note: Incompatible observables do not have a complete set of simultaneous eigenkets.
 \end{frame}
