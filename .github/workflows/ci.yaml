@@ -33,11 +33,11 @@ jobs:
 
       - uses: xu-cheng/latex-action@v3
         with:
-          texlive_version: 2025
+          # texlive_version: 2025
           latexmk_shell_escape: true
           work_in_root_file_dir: true
           root_file: Notes/main.tex
-          # docker_image: ghcr.io/xu-cheng/texlive-small:latest
+          docker_image: texlive/texlive:latest
           # pre_compile: |
           #   tlmgr install wrapfig enumitem titlesec svg physics biblatex biblatex-phys
           #   tlmgr install tocbibind siunitx cleveref transparent graphbox
