@@ -33,7 +33,7 @@ jobs:
 
       - uses: xu-cheng/latex-action@v3
         with:
-          # texlive_version: 2024
+          texlive_version: 2025
           latexmk_shell_escape: true
           work_in_root_file_dir: true
           root_file: Notes/main.tex
