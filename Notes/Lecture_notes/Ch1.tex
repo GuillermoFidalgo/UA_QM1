@@ -266,7 +266,7 @@
 	\begin{itemize}
 		\item Compatible observables if $\comm{A}{B} = 0$, otherwise they are called incompatible. e.g.
 		      \begin{gather*}
-			      \comm{S^2}{S_z} = 0 \Rightarrow S^2,S_z \; \text{are compatible}\\
+			      [S^2,S_z] = 0 \Rightarrow S^2,S_z \; \text{are compatible}\\
 			      \comm{S_x}{S_z} \neq 0 \Rightarrow S_x,S_z \; \text{are incompatible}
 		      \end{gather*}
 		\item Suppose there are two (or more) linearly independent eigenkets of $A$ having the same eigenvalue, then the eigenvalues of the two eigenkets are said to be degenerate. e.g. $\left\{ a^{(1)}, a^{(2)},\dots,a^{(k)}\right\}$ correspond to $\left\{\ket{a^{(1)}},\ket{a^{(2)}},\dots,\ket{a^{(k)}}	\right\}$
@@ -332,4 +332,36 @@
 	$A$ measurements and $B$ measurements do not interfere for compatible observables.
 
 	Note: Incompatible observables do not have a complete set of simultaneous eigenkets.
+\end{frame}
+
+\subsection{Uncertainty Relation}
+\begin{frame}
+	\frametitle{Uncertainty Relation}
+	Consider a certain physical state $\ket{\;}$\\
+	\[\Delta A = A - \ev{A}\]
+	mena square deviation:
+	\[
+		\ev{(\Delta A)^2} = \ev{ (A^2 - 2A \ev{A} + \ev{A}^2 ) } = \ev{A^2} - \ev{A}^2
+	\]
+	Note: if the state is an eigenket of A: $\ket{\;} = \ket{a'}$
+	\[\begin{split}
+			\ev{A} = \mel{a'}{A}{a'} = a' \Rightarrow \ev{(\Delta A)^2} = 0 \\ \therefore \text{mean standard deviation vanishes}
+		\end{split}
+	\]
+\end{frame}
+\begin{frame}
+	\begin{alertblock}{Uncertainty Relation}
+		let $A,B$ be observables. Then, for any state, we have
+		\[
+			\ev{(\Delta A)^2}\ev{(\Delta B)^2} \ge |\ev{\acomm{A}{B}}|^2
+		\]
+	\end{alertblock}
+	Proof. Lemma 1: Schwartz Inequality:
+
+	\begin{gather*}
+		\ip{\alpha} \ip{\beta} \ge |\ip{\alpha}{\beta}|^2 \; \text{i.f.} \; |\va a|^2 |\va b|^2 \ge  |\va a \cdot \va b|^2\\
+		a^2 b^2 \ge (ab \cos{\theta})^2\\
+		|(\ket \alpha + \lambda \ket \beta)|^2 \ge 0  \quad (\bra{\alpha} + \lambda^* \bra \beta) \cdot (\ket \alpha + \lambda \ket \beta) \ge 0
+	\end{gather*}
+	where $\lambda \in \mathbb{C}$. Take $\lambda = -\frac{\ip{\beta}{\alpha}}{\ip{\beta}{\beta}} \quad \Rightarrow$ Schwartz Inequality.
 \end{frame}
