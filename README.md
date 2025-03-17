@@ -1,5 +1,7 @@
 # Quantum Mechanic Notes for PH 541
 
+[![My LaTeX CI](https://github.com/GuillermoFidalgo/UA_QM1/actions/workflows/ci.yaml/badge.svg)](https://github.com/GuillermoFidalgo/UA_QM1/actions/workflows/ci.yaml)
+
 ## Pre-commit ci
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/GuillermoFidalgo/UA_QM1/main.svg)](https://results.pre-commit.ci/latest/github/GuillermoFidalgo/UA_QM1/main)
 
