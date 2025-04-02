@@ -356,7 +356,9 @@
 			\ev{(\Delta A)^2}\ev{(\Delta B)^2} \ge |\ev{\acomm{A}{B}}|^2
 		\]
 	\end{alertblock}
-	Proof. Lemma 1: Schwartz Inequality:
+	Proof
+
+	Lemma 1: Schwartz Inequality:
 
 	\begin{gather*}
 		\ip{\alpha} \ip{\beta} \ge |\ip{\alpha}{\beta}|^2 \; \text{i.f.} \; |\va a|^2 |\va b|^2 \ge  |\va a \cdot \va b|^2\\
@@ -364,4 +366,59 @@
 		|(\ket \alpha + \lambda \ket \beta)|^2 \ge 0  \quad (\bra{\alpha} + \lambda^* \bra \beta) \cdot (\ket \alpha + \lambda \ket \beta) \ge 0
 	\end{gather*}
 	where $\lambda \in \mathbb{C}$. Take $\lambda = -\frac{\ip{\beta}{\alpha}}{\ip{\beta}{\beta}} \quad \Rightarrow$ Schwartz Inequality.
+\end{frame}
+\begin{frame}
+	Lemma 2: The expectation value of a Hermitian Operator is real.
+
+	\[
+		\mel{a''}{X}{a'} = \mel{a'}{X^\dag}{a''}^*
+	\]
+
+	For $\ket{a'} = \ket{a''}$, $\mel{a'}{X}{a'} = \mel{a'}{X}{a'}^*$. Therefore purely real.
+
+	\vfill
+
+	Lemma 3: The expectation value of an anti-Hermitian operator, define by $C=-C^\dag$ is purely imaginary.
+
+	\begin{gather*}
+		\mel{a'}{X}{a'} = \mel{a'}{\underbrace{X^\dag}_{-X}}{a'}^*\\
+		-\mel{a'}{X}{a'}^*. \qed
+	\end{gather*}
+\end{frame}
+
+\begin{frame}
+	In the Schwartz Inequality:  $ \ket{\alpha} = \Delta A \ket{} \quad \ket\beta = \Delta B \ket{}$
+
+	Since $A,B$ are observables they are Hermitian. $$\ev{(\Delta A)^2}\ev{(\Delta B)^2} \ge |\ev{(\Delta A \Delta B)}|^2$$
+
+	Decomposing ,
+	\begin{gather*}
+		\Delta A \Delta B = \overbrace{\frac{1}{2}\comm{\Delta A}{\Delta B}}^{\text{anti-Hermitian}} + \overbrace{\frac{1}{2} \acomm{\Delta A}{\Delta B}}^{\text{Hermitian}}
+	\end{gather*}
+\end{frame}
+\begin{frame}
+	with $\comm{\Delta A}{\Delta B} = \comm{A }{B }$ being anti-Hermitian.
+	\begin{align*}
+		(\comm{A}{B})^\dag & = (AB - BA)^\dag = B^\dag A^\dag - A^\dag B^\dag \\
+		                   & = BA - AB = -\comm{A}{B}
+	\end{align*}
+	$\acomm{\Delta A}{\Delta B}$ being Hermitian $\to (\comm{\Delta A}{\Delta B})^\dag = (\Delta A \Delta B + \Delta B \Delta A)^\dag$
+	$$ \Delta B \Delta A + \Delta A \Delta B = \acomm{\Delta A}{\Delta B}$$
+	\[
+		C = ib + a \to |c|^2 = b^2+a^2
+	\]
+	\[
+		|\ev{\Delta A \Delta B}|^2 = \frac14 |\comm{A}{B}|^2 + \underbrace{\frac14 |\ev{\acomm{\Delta A}{\Delta B}}|^2}_{\ge 0 } \ge |\ev{\comm{A}{B}}|^2
+	\]
+
+\end{frame}
+
+\subsection{Change of Basis}
+\begin{frame}
+	\frametitle{Change of Basis}
+	Two incompatible observables $A$ and $B$. \[A : \{\ket{a'}\} \quad B: \{\ket{b'}\}\]
+
+	A representation: represent in which the base eigenkets are given by $\{ \ket{a'}\}$.
+
+
 \end{frame}
