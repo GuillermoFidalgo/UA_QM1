@@ -1,8 +1,8 @@
 \section{Base Kets and Matrix Representations}
 \begin{frame}{Eigenkets of an observation}
-	\begin{alertblock}{Theorem 1}
+	\begin{theorem}[1]
 		The eigenvalues of a Hermitian operator $A$ are real; the eigenkets of $A$ corresponding to different eigenvalues are orthogonal.
-	\end{alertblock}
+	\end{theorem}
 	Proof:
 
 	\begin{gather}
@@ -275,9 +275,9 @@
 \end{frame}
 
 \begin{frame}{Compatible Observables}
-	\begin{alertblock}{Theorem 2}
+	\begin{theorem}[2]
 		Suppose $A \ \&\  B$ are compatible observables, and the eigenvalues of $A$ are non-degenerate. Then, the matrix elements $\mel{a''}{B}{a'}$ are all diagonal.
-	\end{alertblock}
+	\end{theorem}
 
 	Proof:
 	\begin{align*}
@@ -350,12 +350,12 @@
 	\]
 \end{frame}
 \begin{frame}
-	\begin{alertblock}{Uncertainty Relation}
+	\begin{theorem}[Uncertainty Relation]
 		let $A,B$ be observables. Then, for any state, we have
 		\[
 			\ev{(\Delta A)^2}\ev{(\Delta B)^2} \ge |\ev{\acomm{A}{B}}|^2
 		\]
-	\end{alertblock}
+	\end{theorem}
 	Proof
 
 	Lemma 1: Schwartz Inequality:
@@ -405,7 +405,7 @@
 	$\acomm{\Delta A}{\Delta B}$ being Hermitian $\to (\comm{\Delta A}{\Delta B})^\dag = (\Delta A \Delta B + \Delta B \Delta A)^\dag$
 	$$ \Delta B \Delta A + \Delta A \Delta B = \acomm{\Delta A}{\Delta B}$$
 	\[
-		C = ib + a \to |c|^2 = b^2+a^2
+		c = ib + a \to |c|^2 = b^2+a^2
 	\]
 	\[
 		|\ev{\Delta A \Delta B}|^2 = \frac14 |\comm{A}{B}|^2 + \underbrace{\frac14 |\ev{\acomm{\Delta A}{\Delta B}}|^2}_{\ge 0 } \ge |\ev{\comm{A}{B}}|^2
@@ -418,7 +418,78 @@
 	\frametitle{Change of Basis}
 	Two incompatible observables $A$ and $B$. \[A : \{\ket{a'}\} \quad B: \{\ket{b'}\}\]
 
-	A representation: represent in which the base eigenkets are given by $\{ \ket{a'}\}$.
+	A representation: representation in which the base eigenkets are given by $\{ \ket{a'}\}$.
 
+	How to relate, $A$'s  representation to $B$'s representation $\ket{a'} \to \ket{b'}$?
+
+	\begin{theorem}[3]
+		Given two sets of base kets with satisfying orthonormality and completeness, there exists a unitary operator
+		$U$ such that 
+
+		\[
+			\ket{b^{(1)}} = U \ket{a^{(1)}},\ket{b^{(2)}} = U \ket{a^{(2)}}, \dots \ket{b^{(N)}} = U \ket{a^{(N)}}
+		\]
+	\end{theorem}
+	An operator is unitary when it satisfies $UU^\dag = U^\dag U = \mathbb{1}$
+	
+	Proof : 
+	\[
+	U= \sum_k \op{b^{(k)}}{a^{(k)}} \qed
+	\] 
+	
+\end{frame}
+
+\begin{frame}{Matrix representation of $U$ in the old $\{\ket{a'}\}$ basis}
+	\[
+	\mel{a^{(k)}}{U}{a^{(l)}} = \ip{a^{(k)}}{b^{(k)}}
+	\]
+	Given an arbitrary ket $\ket{\alpha}$. 
+	\begin{gather*}
+		\ket{\alpha} = \sum_{a'} \ket{a'} \bra{a'}\ket{\alpha}\\
+		\intertext{where $\ip{a'}{\alpha}$ is the coefficient for representing $\ket{\alpha}$ in $\ket{a'}$ basis.}
+		\ip{b^{(k)}}{\alpha} = \sum_l \ip{b^{(k)}}{a^{(l)}} \ip{a^{(l)}}{\alpha} = \sum_l \ip{a^{(l)}}{b^{(k)}}^* \ip{a^{(l)}}{\alpha}\\
+		\ket{b^{(k)}} = U \ket{a^{(k)}} \leftrightarrow \bra{b^{(k)}} = \bra{a^{(k)}}U^\dag\\
+		\ip{b^{(k)}}{\alpha} = \sum_l \mel{a^{(k)}}{U^\dag}{a^{(l)}}\ip{a^{(l)}}{\alpha}\\
+		\small\mqty(\text{Column vector of }\\ \ip{b^{(k)}}{\alpha}) = \mqty(\text{matrix of } \\ U^\dag \\ \text{ in } A \text{ representation}) \mqty(\text{Column vector of }\\ \ip{a^{(l)}}{\alpha})
+	\end{gather*}
+\end{frame}
+
+\begin{frame}
+	Relate the old matrix elements of an opertator $X$ to the new matrix elements of $X$:
+
+	\begin{gather*}
+		\mel{b^{(k)}}{X}{b^{(\ell)}} = \mel{b^{(k)}}{\overbrace{\mathbb{1}}^{\sum_{a'} \op{a'}} \cdot X \cdot \overbrace{\mathbb{1}}^{\sum_{a'} \op{a'}}}{b^{(\ell)}}\\
+		 = \sum_m \sum_n \ip{b^{(k)}}{a^{(m)}}\mel{a^{(m)}}{X}{a^{(n)}} \ip{a^{(n)}}{b^{(\ell)}}\\
+		 \underbrace{\mel{b^{(k)}}{X}{b^{(\ell)}}}_{\text{matrix in $b$ rep.}} = \sum_m \sum_n \underbrace{\mel{a^{(k)}}{U^\dag}{a^{(m)}} \mel{a^{(m)}}{X}{a^{(n)}} \mel{a^{(n)}}{U}{a^{(\ell)}}}_{\text{matrices represented in the $a$ basis}} 
+	\end{gather*}
+
+		$$ X' = U^\dag X U \qquad{\to} \quad \text{similarity transformation}$$
+\end{frame}
+
+\begin{frame}{Trace}
+	\[\Tr(X) = \sum_{a'} \mel{a'}{X }{a'}\] trace is independent of representation.
+
+	\begin{align*}
+		\sum_{a'} \mel{a'}{X }{a'} &= \sum_{b' b'' a'} \ip{a'}{b'} \mel{b'}{X}{b''} \ip{b''}{a'}\\
+		&= \sum_{b' b'' a'} \ip{b''}{a'} \ip{a'}{b'} \mel{b'}{X}{b''} \\
+		&= \sum_{b' b''} \ip{b''}{b'} \mel{b'}{X}{b''}\\
+		&= \sum_{b'} \ev{X}{b'}
+	\end{align*}
+\end{frame}
+
+\begin{frame}{Properties of the Trace}
+	\begin{itemize}
+		\item $\Tr(XY) = \Tr(YX)$
+		\item $\Tr(XYZ) = \Tr(ZXY) = \Tr(YZX)$
+		\item $\Tr(U^\dag X U) = \Tr(X)$
+		\item $\Tr(\op{b'}{a'}) = \ip{a'}{b'}$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	If we know the $A$ representation of an operator $B$, how do we find the eigenvalues and eigenkets of $B$?
+	\begin{gather*}
+		B \ket{b'} b'\ket{b'}
+	\end{gather*}
 
 \end{frame}
