@@ -489,7 +489,55 @@
 \begin{frame}
 	If we know the $A$ representation of an operator $B$, how do we find the eigenvalues and eigenkets of $B$?
 	\begin{gather*}
-		B \ket{b'} b'\ket{b'}
+		B \ket{b'} = b'\ket{b'} \intertext{Now we put a $\bra{a''}$ and we use completeness.}
+		\sum_{a'} \mel{a''}{B }{a'}\ip{a'}{b'} = b'\ip{a''}{b'}
+		\intertext{Take $B$ to be the $\ell$'th eigenket of B}
+		\mqty[\xmat*{B}{2}{3} & \dots \\ \vdots & \vdots & \ddots] \mqty[C_1^{(\ell)} \\ C_2^{(\ell)} \\ \vdots] = b^{(\ell)} \mqty[C_1^{(\ell)}\\ C_2^{(\ell)} \\ \vdots]
+	\end{gather*}
+	Where $B_{ij} = \mel{a^{(i)}}{B}{a^{(j)}} \qq{;} C_k^{(\ell)} = \ip{a^{(k)}}{b^{(\ell)}}$
+\end{frame}
+
+\begin{frame}
+	Non-trivial solution for $C_k^{(\ell)}$ requires $\det(B - \lambda \mathbb{1}) = 0 \Rightarrow N $ values of $\lambda$: \\
+	$$b^{(1)},b^{(2)},\dots,b^{(\ell)} \qq{--- eigenvalues}$$ \\
+	\[
+		\mqty[C_1^{(1)}\\ C_2^{(1)} \\ \vdots], \mqty[C_1^{(2)}\\ C_2^{(2)} \\ \vdots], \dots, \mqty[C_1^{(N)}\\ C_2^{(N)} \\ \vdots] \qq{--- eigenkets}
+	\]
+	since $C_k^{(\ell)} = \mel{a^{(k)}}{U}{a^{(\ell)}}$, then having solved for the eigenvectors means having solved for U!
+
+	\[
+		U^\dag A U = \mqty(\dmat{\ddots,\ddots,\ddots})
+	\]
+\end{frame}
+
+
+\begin{frame}
+	Finally for basis states $\{\ket{a'}\} \& \{\ket{b'}\}$ where $\ket{b'} = U \ket{a'}$
+
+	\begin{gather*}
+		A\ket{a^{\ell}} = a^{(\ell)} \ket{a^{(\ell)}}\\
+		U A \ket{a^{(\ell)}} = a^{(\ell)} U \ket{a^{(\ell)}}
+		\intertext{Now inserting $U^{-1} U = \mathbb{1}$ after UA on the LHS (note: $U^{-1} = U^\dag$)}
+		(UAU^{-1}) \underbrace{U\ket{a^{(\ell)}}}_{\ket{b^{(\ell)}}} = a^{(\ell)} \underbrace{U\ket{a^{(\ell)}}}_{b^{(\ell)}}\\
+		(UAU^{-1}) \ket{b^{(\ell)}} = a^{(\ell)} \ket{b^{(\ell)}}
 	\end{gather*}
 
+	Therefore $A$ and $UAU^{-1}$ share the same eigenvalue spectra.
+\end{frame}
+
+
+\section{Position, Momentum and Translation}
+\begin{frame}{Position, Momentum and Translation}{Continuous Spectra}
+	\begin{itemize}
+		\item Discreete eigenvalue, eg. $S_z$, dimensionality of the state space can be finite or infinite.
+		\item Continuous eigenvalue spectra, eg. $p_z$, dimensionality of the state space is infinite.
+	\end{itemize}
+	\begin{align*}
+		\text{Discrete spectra}               &  & \text{Continuous Spectra}                            \\
+		A\ket{a'} = a'\ket{a'}                &  & \xi \ket{\xi'} = \xi'\ket{\xi'}                      \\
+		\ip{a'}{a''} = \delta_{a'a''}         &  & \ip{\xi'}{\xi''} = \delta(\xi'- \xi'')               \\
+		\sum_{a'} \op{a'} = \mathbb{1}        &  & \int \dd{\xi'} \op{\xi'} = \mathbb 1
+		\intertext{For $\ip{\alpha}  = 1$}
+		\sum_{a'} \qty|\ip{a'}{\alpha}|^2 = 1 &  & \int \dd{\xi'} \qty|\ip{\xi'}{\alpha}|^2 = \mathbb 1
+	\end{align*}
 \end{frame}
