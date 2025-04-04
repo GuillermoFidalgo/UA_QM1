@@ -10,27 +10,24 @@
 		\bra{a'' }A = a''^* \bra{a''} \label{eq:2}\\
 		\bra{a''} \cdot \ref{eq:1} - \ref{eq:2}\cdot \ket{a'} \to (a'-a'') \ip{a''}{a'} = 0
 	\end{gather}
-	If $a'=a''$, then $a'=a''^*=a'^*$ since $\ip{a'}{a'} = 0$
+	If $a'=a''$, then $a'=a''^*=a'^*$ since $\ip{a'}{a'} = 0 \to $ a is real.
 
-	$\therefore a'$ is real. If $a'\ne a'', a'-a'' \ne 0 \Longrightarrow \ip{a''}{a'} = 0$
+	If $a'\ne a'', a'-a'' \ne 0 \Longrightarrow \ip{a''}{a'} = 0 \to \ket{a''} \& \ket{a'}$ are orthogonal.
 
-	i.e. $\ket{a''} \& \ket{a'}$ are orthogonal.
+	\vfill
 
-\end{frame}
-\begin{frame}
 	Can normalize $\ket{a'}$ so that $\{\ket{a'}\}$ forms an orthogonal set with $\ip{a''}{a'}= \delta_{a' a''}$.
-
 	The set of eigenkets forms a complete set to span the ket space.
 \end{frame}
 
-\subsection{Eigenkets and Base Kets}
+\subsection{Eigenkets as Base Kets}
 \begin{frame}
-	\frametitle{Eigenkets and Base Kets}
+	\frametitle{Eigenkets as Base Kets}
 
 	\begin{equation}\label{eq:alpha base}
 		\ket{\alpha} = \sum_{a'} C_{a'} \ket{a'}
 	\end{equation}
-	--- expansion of an arbitrary ket in the ket space spanned by the eigenkets of $A$.
+	Expansion of an arbitrary ket in the ket space spanned by the eigenkets of $A$.
 	\begin{gather*}
 		\bra{a''} (\ref{eq:alpha base}): \quad \ip{a''}{\alpha} = \sum_{a'} C_{a'} \underbrace{\ip{a''}{a'}}_{\delta_{a'' a'}} = C_{a''}\\
 		\Rightarrow C_{a'} = \ip{a'}{\alpha}\\
@@ -47,14 +44,18 @@
 	$$
 	eg.
 	\begin{columns}
-		\column{.5\textwidth}
+		\column{.4\textwidth}
 		\begin{gather*}
 			\ip{\alpha} = \bra{\alpha} \cdot \qty(\sum_{a'}\op{a'}) \cdot \ket{\alpha}	\\
 			= \sum_{a'} \ip{\alpha}{a'}\ip{a'}{\alpha}\\
 			= \sum_{a'} \ip{a'}{\alpha}^*\ip{a'}{\alpha}\\
 			= \sum_{a'} \qty|\ip{a'}{\alpha}|^2
 		\end{gather*}
-		\column{.5\textwidth}
+		\column{.02\textwidth}
+
+		\rule{.1mm}{0.45\textheight}
+
+		\column{.4\textwidth}
 		also if $\ket{\alpha}$ is normalized then $\ip{\alpha}  = 1$
 		\begin{align*}
 			\Rightarrow & \sum_{a'} \qty|\ip{a'}{\alpha}|^2 \\
@@ -108,8 +109,7 @@
 			\vdots & \vdots & \ddots
 		]
 	\]
-	is a square matrix
-	Note:
+	is a square matrix, note:
 
 	\[
 		\mel{a'' }{X}{a'} = \mel{a'}{X^\dag}{a''}^* \Rightarrow \mel{a'}{X^\dag}{a''} = \mel{a''}{X}{a'}^*
@@ -325,7 +325,7 @@
 			      \ket{\alpha} \xrightarrow[A \text{ get } a']{\text{measurement}} \ket{a',b'} \xrightarrow[B \text{ get } b']{\text{measurement}} \ket{a',b'}\xrightarrow[A \text{ get } a']{\text{measurement}}\ket{a',b'}
 		      \]
 		\item If eigenvalues of $A$ are n-fold degenerate:
-		      \[\tiny \hspace{-4mm}
+		      \[
 			      \ket{\alpha} \xrightarrow[A \text{ get } a']{\text{measurement}} \sum_{i=1}^n C_{a}^{i}\ket{a',b^{(i)}} \xrightarrow[B \text{ get } b^{(j)}]{\text{measurement}} \ket{a',b^{(j)}}\xrightarrow[A \text{ get } a']{\text{measurement}}\ket{a',b^{(j)}}
 		      \]
 	\end{itemize}
@@ -451,7 +451,7 @@
 		\ip{b^{(k)}}{\alpha} = \sum_l \ip{b^{(k)}}{a^{(l)}} \ip{a^{(l)}}{\alpha} = \sum_l \ip{a^{(l)}}{b^{(k)}}^* \ip{a^{(l)}}{\alpha}\\
 		\ket{b^{(k)}} = U \ket{a^{(k)}} \leftrightarrow \bra{b^{(k)}} = \bra{a^{(k)}}U^\dag\\
 		\ip{b^{(k)}}{\alpha} = \sum_l \mel{a^{(k)}}{U^\dag}{a^{(l)}}\ip{a^{(l)}}{\alpha}\\
-		\small\mqty(\text{Column vector of }\\ \ip{b^{(k)}}{\alpha}) = \mqty(\text{matrix of } \\ U^\dag \\ \text{ in } A \text{ representation}) \mqty(\text{Column vector of }\\ \ip{a^{(l)}}{\alpha})
+		\mqty(\text{Column vector of }\\ \ip{b^{(k)}}{\alpha}) = \mqty(\text{matrix of } \\ U^\dag \\ \text{ in } A \text{ representation}) \mqty(\text{Column vector of }\\ \ip{a^{(l)}}{\alpha})
 	\end{gather*}
 \end{frame}
 
@@ -585,18 +585,69 @@
 	\begin{gather*}
 		\ket{\alpha} = \int_{-\infty}^\infty \dd[3]{x'} \ket{x'}\ip{x'}{\alpha}
 		\intertext{where $\ket{x'}$ is a simultaneous eigenket of $X,Y,Z$}
-		\ket{\vec x'} = \ket{x',y',z'}
+		\ket{\vb x'} = \ket{x',y',z'}
 		\intertext{with}
-		X\ket{x'}= x' \ket{x'}\\
-		Y\ket{y'} = y' \ket{x'}\\
-		Z \ket{z'} = z' \ket{x'}
+		X\ket{\vb x'}= x' \ket{\vb x'}\\
+		Y\ket{\vb x'} = y' \ket{\vb x'}\\
+		Z \ket{\vb x'} = z' \ket{\vb x'}
 	\end{gather*}
 	assumes $x,y,z$ are compatible observables i.e. $\comm{x_i}{x_j}= 0$. Where $i,j = \{1,2,3\} $ standing for $\{x,y,z\}$ respectively.
 \end{frame}
 
+\subsection{Translation}
 \begin{frame}
 	\frametitle{Translation}
 
-	Change a state localized around $\vec{x'}$ to another state around $\vec{x'} + \dd{\vec{x'}}$
+	Change a state localized around $\vb{x'}$ to another state around $\vb{x'} + \dd{\vb{x'}}$
+	\\
+	\begin{align*}
+		\mathcal{J}(\dd{\vb x'}) \ket{\vb x'} & = \ket{\vb x' + \dd{\vb x'}}                                       \\
+		\ket{\alpha}                          & \to \mathcal{J}(\dd{\vb x'})\ket{\alpha}                           \\
+		                                      & = \mathcal{J}(\dd{\vb x'}) \int \dd[3]{x'} \op{\vb x'}\ket{\alpha} \\
+		                                      & = \int \dd[3]{x'} \op{\vb x' + \dd{\vb x'}}{\vb x'} \ket \alpha    \\
+		                                      & = \int \dd[3]{x'} \op{\vb x'}{\vb x' - \dd{\vb x'}} \ket \alpha
+	\end{align*}
+
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Translation}
+	What properties must be satisfied by $\mathcal{J}(\dd{\vb x'})$?
+	\begin{itemize}
+		\item $\ket{\alpha}$ is normalized $\to \mathcal{J}(\dd{\vb x'}) \ket \alpha$ should be also normalized.
+		      \begin{gather*}
+			      \ip{\alpha} = 1 = \ev{\mathcal{J}^\dag (\dd{\vb x'}) \mathcal{J}(\dd{\vb x'})}{\alpha}\\
+			      \Rightarrow \mathcal{J}^\dag \mathcal J= \mathbb{1}
+		      \end{gather*}
+		      i.e $\mathcal{J}$ is a unitary operator.
+
+		\item $\mathcal{J}(\dd{\vb x'})\mathcal{J}(\dd{\vb x''}) = \mathcal{J}(\dd{\vb x'} + \dd{\vb x''})$
+		\item $ \mathcal{J}(-\dd{\vb x'}) = \mathcal{J}^{-1}(\dd{\vb x'})$
+		\item $ \displaystyle \lim_{\dd{\vb x'} \to 0} \mathcal{J}(\dd{\vb x'}) = 1$ a.k.a expect the difference between $\mathcal{J}(\dd{\vb x'})$ and $\mathbb 1$ to be first order in $\dd{x'}$ i.e. $\mathcal{J}(\dd{\vb x'}) = \mathbb{1} + \Delta(\dd{\vb x'})$.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Translation}
+	All of the above properties are satisfied by taking
+	\[
+		\mathcal{J}(\dd{\vb x'}) = \mathbb 1 - i\vb{K} \cdot \dd{\vb x'}
+	\]
+	where the components of $\vb K$ ($K_x, K_y, K_z$) are Hermitian operators.
+	Checking the unitarity property
+	\begin{align*}
+		\mathcal{J}^\dag(\dd{\vb x'}) \mathcal{J}(\dd{\vb x'}) & = (\mathbb 1 + i\vb K \cdot  \dd{\vb x'})(\mathbb 1 - i\vb K \cdot  \dd{\vb x'}) \\
+		                                                       & = \mathbb{1} - i(\vb K - \vb K)\cdot \dd{\vb x'}                                 \\
+		                                                       & = \mathbb{1} + \order{[(\dd{\vb x'})^2]} \simeq \mathbb 1
+	\end{align*}
+
+	Consider
+	\begin{gather*}
+		\vb x \mathcal{J}(\dd{\vb x'})\ket{\vb x'} = \vb x	\ket{\vb x' + \dd{\vb x'}} = (\vb x' + \dd{\vb x'})\ket{\vb x' + \dd{\vb x'}}\\
+		\mathcal{J}(\dd{\vb x'}) \vb x \ket{\vb x'} = \vb x' \mathcal{J}(\dd{\vb x'}) \ket{\vb x'} = \vb x' \ket{\vb x' + \dd{\vb x'}}\\
+		\Rightarrow \comm{\vb x}{\mathcal{J}(\dd{\vb x'})} \ket{\vb x'} = \dd{\vb x'} \ket{\vb x' + \dd{\vb x'}} \simeq \dd{\vb x'} \ket{\vb x'}\\
+		\comm{\vb x}{\mathcal{J}(\dd{\vb x'})}  = \dd{\vb x'}
+	\end{gather*}
 
 \end{frame}
