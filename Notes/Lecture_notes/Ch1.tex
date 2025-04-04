@@ -181,6 +181,7 @@
 	\end{gather*}
 \end{frame}
 
+\subsection{Example: Spin 1/2 systems}
 \begin{frame}{Example: Spin 1/2 systems}
 	Base kets : $ \ket{S_z;\pm} = \ket{\pm}$\\
 	Completeness: $\mathbb{1} = \op{+} + \op{-}$
@@ -190,7 +191,6 @@
 	\end{gather*}
 \end{frame}
 
-\subsection{Example: Spin 1/2 systems}
 \begin{frame}{Example: Spin 1/2 systems}
 
 	Now define
@@ -231,6 +231,7 @@
 
 
 \section{Measurements, Observables and the Uncertainty Relations}
+
 \begin{frame}{Measurements, Observables and the Uncertainty Relations}{Measurements}
 	\begin{itemize}
 		\item Observable A \\
@@ -550,7 +551,52 @@
 
 \subsection{Position eigenkets and position measurements}
 \begin{frame}{Position eigenkets and position measurements}
+	How to extend the idea of measurements to measurements of observables with continuous spectra?
+	Consider the measurement of a particle's position in 1-D:
+	\[
+		x\ket{x'}=x'\ket{x'}
+	\]
+	Before measurement
+	$$ \ket{\alpha} = \int_{-\infty}^\infty \dd{x'} \op{x'}\ket{\alpha}$$
+\end{frame}
 
+\begin{frame}
+	Detector: will click only when  the particle is precisely at $x'$: $$ \ket{\alpha} \to \ket{x'}$$
+	Discrete spectra case:
+	\[
+		\ket{\alpha} = \sum_{a'} \ket{a'}\ip{a'}{\alpha}
+	\]
+	The probability of obtaining $a'$ from a measurement is $\qty|\ip{a'}{\alpha}|^2$.
 
+	Continuous spectra case:
+
+	\[
+		\ket{\alpha} = \int_{-\infty}^\infty \dd{x'} \ket{x'}\ip{x'}{\alpha}
+	\]
+	The probability of obtaining $x'$ from measurement is $\qty|\ip{x'}{\alpha}|^2 \dd{x'}$ and $\qty|\ip{x'}{\alpha}|^2$ is the probability density (probability per unit length).
+
+	\begin{gather*}
+		\ip{\alpha} = 1 = \int_{-\infty}^\infty \dd{x'} \bra{\alpha}\ket{x'}\ip{x'}{\alpha}\\
+		= \int_{-\infty}^\infty \dd{x'} \qty|\ip{x'}{\alpha}|^2 = 1
+	\end{gather*}
+\end{frame}
+
+\begin{frame}{Generalize to 3-D}
+	\begin{gather*}
+		\ket{\alpha} = \int_{-\infty}^\infty \dd[3]{x'} \ket{x'}\ip{x'}{\alpha}
+		\intertext{where $\ket{x'}$ is a simultaneous eigenket of $X,Y,Z$}
+		\ket{\vec x'} = \ket{x',y',z'}
+		\intertext{with}
+		X\ket{x'}= x' \ket{x'}\\
+		Y\ket{y'} = y' \ket{x'}\\
+		Z \ket{z'} = z' \ket{x'}
+	\end{gather*}
+	assumes $x,y,z$ are compatible observables i.e. $\comm{x_i}{x_j}= 0$. Where $i,j = \{1,2,3\} $ standing for $\{x,y,z\}$ respectively.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Translation}
+
+	Change a state localized around $\vec{x'}$ to another state around $\vec{x'} + \dd{\vec{x'}}$
 
 \end{frame}
