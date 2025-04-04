@@ -11,7 +11,10 @@
 - If you don't have a working latex installation to compile the documents you could use the docker image from Texlive.
 
 ```bash
-docker pull texlive/texlive # Warning: Over 5GB in size!!
+docker pull texlive/texlive@sha256:b09360744230661858dc48526b9f20aa1269dba37d4e5310e3150b8f93584e58
+
+# This is just the "latest" version of Texlive (as of April 4, 2025)
+# Warning: Over 5GB in size!!
 ```
 
 To contribute just ignore the `HW1/` folder, the bulk of the work is to be done in the `Notes/` directory where you will find the following structure
