@@ -351,7 +351,7 @@
 \end{frame}
 \begin{frame}
 	\begin{theorem}[Uncertainty Relation]
-		let $A,B$ be observables. Then, for any state, we have
+		Let $A,B$ be observables. Then, for any state, we have
 		\[
 			\ev{(\Delta A)^2}\ev{(\Delta B)^2} \ge |\ev{\acomm{A}{B}}|^2
 		\]
@@ -528,16 +528,29 @@
 
 \section{Position, Momentum and Translation}
 \begin{frame}{Position, Momentum and Translation}{Continuous Spectra}
+	\small
 	\begin{itemize}
-		\item Discreete eigenvalue, eg. $S_z$, dimensionality of the state space can be finite or infinite.
+		\item Discrete eigenvalue, eg. $S_z$, dimensionality of the state space can be finite or infinite.
 		\item Continuous eigenvalue spectra, eg. $p_z$, dimensionality of the state space is infinite.
 	\end{itemize}
+	% \tiny
 	\begin{align*}
-		\text{Discrete spectra}               &  & \text{Continuous Spectra}                            \\
-		A\ket{a'} = a'\ket{a'}                &  & \xi \ket{\xi'} = \xi'\ket{\xi'}                      \\
-		\ip{a'}{a''} = \delta_{a'a''}         &  & \ip{\xi'}{\xi''} = \delta(\xi'- \xi'')               \\
-		\sum_{a'} \op{a'} = \mathbb{1}        &  & \int \dd{\xi'} \op{\xi'} = \mathbb 1
+		\text{Discrete spectra}                                       &  & \text{Continuous Spectra}                                              \\
+		A\ket{a'} = a'\ket{a'}                                        &  & \xi \ket{\xi'} = \xi'\ket{\xi'}                                        \\
+		\ip{a'}{a''} = \delta_{a'a''}                                 &  & \ip{\xi'}{\xi''} = \delta(\xi'- \xi'')                                 \\
+		\sum_{a'} \op{a'} = \mathbb{1}                                &  & \int \dd{\xi'} \op{\xi'} = \mathbb 1
 		\intertext{For $\ip{\alpha}  = 1$}
-		\sum_{a'} \qty|\ip{a'}{\alpha}|^2 = 1 &  & \int \dd{\xi'} \qty|\ip{\xi'}{\alpha}|^2 = \mathbb 1
+		\sum_{a'} \qty|\ip{a'}{\alpha}|^2 = \mathbb 1                 &  & \int \dd{\xi'} \qty|\ip{\xi'}{\alpha}|^2 = \mathbb 1                   \\
+		\ip{\beta}{\alpha} = \sum_{a'} \ip{\beta}{a'} \ip{a'}{\alpha} &  & \ip{\beta}{\alpha} = \int \dd{\xi'} \ip{\beta}{\xi'} \ip{\xi'}{\alpha} \\
+		\mel{a''}{A}{a'} = a' \delta_{a' a''}                         &  & \mel{\xi''}{\xi}{\xi'} = \xi' \delta(\xi'' - \xi')
 	\end{align*}
+
+
+\end{frame}
+
+\subsection{Position eigenkets and position measurements}
+\begin{frame}{Position eigenkets and position measurements}
+
+
+
 \end{frame}
