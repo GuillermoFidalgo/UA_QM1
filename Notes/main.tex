@@ -1,4 +1,4 @@
-\documentclass[aspectratio=43,10pt]{beamer}
+\documentclass[aspectratio=43,10pt,compress]{beamer}
 \input{Beamer-Template.tex}
 
 \title[Lecture Notes]{PH - 541\\ Quantum Mechanics \\Lecture Notes}
@@ -12,37 +12,38 @@
 % \logo{\includegraphics[width = 1cm]{Images/UA_logo.jpg}}
 
 
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 % For adding TOC at every section
 % \AtBeginSection[]
 % {
 %     \begin{frame}
-%         \frametitle{Table of Contents}
-%         \tableofcontents[currentsection]
+%         \frametitle{Outline}
+%         \tableofcontents[subsections,hideothersubsections]
 %     \end{frame}
 % }
 % \AtBeginSubsection[]
 % {
-%     \begin{frame}
+% 	\begin{frame}
 %         \frametitle{Table of Contents}
-%         \tableofcontents[currentsubsection]
+%         \tableofcontents[currentsubsection,subsubsectionstyle=current/other in current/other]
 %     \end{frame}
-% }
-%%%%%%%%%%%%%%%%%%%%%
+% 	}
+	%%%%%%%%%%%%%%%%%%%%%
 
-% For adding a slide at each section
-% \AtBeginSubsection{
-% \begin{frame}
-% 	\vfill
-% 	\centering
-% 	% \begin{beamercolorbox}[sep=6pt,center,shadow=true,rounded=true]{title}
-% 	  \usebeamerfont{title}
-% 	  \insertsectionhead
-% 	  \\ (\insertsubsectionhead)\par%
-% 	% \end{beamercolorbox}
-% 	\vfill
-% \end{frame}
-% }
+	% For adding a slide at each section
+	\AtBeginSubsection{
+		\begin{frame}
+			\vfill
+			\centering
+			% \begin{beamercolorbox}[sep=6pt,center,shadow=true,rounded=true]{title}
+			  \usebeamerfont{title}
+			  \insertsection \\ (\insertsubsection)\par%
+			% \end{beamercolorbox}
+			\vfill
+		\end{frame}
+		}
+
+		% \usepackage{bookmark}
 
 \begin{document}
 \begin{frame}
@@ -51,12 +52,16 @@
 	\includegraphics[width=1.5cm]{Images/UA_logo.jpg}
 \end{frame}
 
-\begin{frame}{TOC}
+\begin{frame}{Table of Contents}
+	% \begin{multicols}{2}
+	% \tableofcontents
+	% \setcounter{tocdepth}{2}
 	\tableofcontents
+	% \end{multicols}
 \end{frame}
 
 \include{Lecture_notes/Ch1}
-% \include{Lecture_notes/P2}
+\include{Lecture_notes/Ch2}
 %\include{Lecture_notes/P3}
 %\include{Lecture_notes/P4}
 %\include{Lecture_notes/P5}
