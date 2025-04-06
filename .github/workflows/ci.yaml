@@ -51,6 +51,7 @@ jobs:
           name: my-slides
           path: Notes/main.pdf
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write
