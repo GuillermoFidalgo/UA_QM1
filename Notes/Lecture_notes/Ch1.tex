@@ -669,30 +669,30 @@
 \begin{frame}
 	\frametitle{Momentum as a generator of translation}
 	$\vb K$ is the wave number operator. $\vb K = \frac{\vb p}{\hbar}$, where $\vb p$ is the momentum operator.
-	
+
 	\begin{gather*}
 		\mathcal{J}(\dd \vb x') = \mathbb{1} - i \frac{\vb p}{\hbar} \cdot \dd{\vb x'}\\
-		\comm{x_i}{p_j} = i \hbar \delta_{ij} 
-	\end{gather*}	
+		\comm{x_i}{p_j} = i \hbar \delta_{ij}
+	\end{gather*}
 
-	eg. $x,p_x$ are incompatible observables, $x,p_y$ are compatible observables. 
+	eg. $x,p_x$ are incompatible observables, $x,p_y$ are compatible observables.
 	It is therefore impossible to find simultaneous eigenkets of $x$ and $p_x$, and thus we can obtain the position
 	momentum uncertainty relation of W. Heisenberg.
 
 	$$
-	\ev{(\Delta x)^2} \ev{(\Delta p_x)^2} \ge \frac{\hbar^2}{4}	
+		\ev{(\Delta x)^2} \ev{(\Delta p_x)^2} \ge \frac{\hbar^2}{4}
 	$$
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{Momentum as a generator of translation (cont)} 
+	\frametitle{Momentum as a generator of translation (cont)}
 	Consider a finite translation in the $x$-direction by $\Delta x'$.
 	\[ \mathcal{J}(\Delta x' \vu x)	\ket{\vb x'} = \ket{\vb x' + \Delta x' \vu x} \]
-	with 
+	with
 	$$
-	\mathcal{J}(\Delta x' \vu x) = \lim_{N \to \infty} \qty(\mathbb{1} - \frac{i p_x \Delta x'}{N \hbar})^N 
-	= \exp(-\frac{i p_x \Delta x'}{\hbar})
+		\mathcal{J}(\Delta x' \vu x) = \lim_{N \to \infty} \qty(\mathbb{1} - \frac{i p_x \Delta x'}{N \hbar})^N
+		= \exp(-\frac{i p_x \Delta x'}{\hbar})
 	$$
 	For any operator $x$,
 	\[\exp(x) = \mathbb{1} + x + \frac{x^2}{2} + \dots = \sum_{N}^{\infty} \frac{x^n}{n!}\]
